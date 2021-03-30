@@ -1,0 +1,174 @@
+.topwrapper {
+  width: 100%;
+  height: 500rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(40rpx);
+    filter: blur(40rpx);
+  }
+
+  .rankname {
+    font-size: 50rpx;
+    color: #fff;
+  }
+}
+
+.type1 {
+  background-image: linear-gradient(
+    141deg,
+    #9fb8ad 0%,
+    #44878f 51%,
+    #689fb3 75%
+  );
+}
+
+.type2 {
+  background-image: linear-gradient(
+    141deg,
+    #9fb8ad 0%,
+    #884e77 51%,
+    #622a64 75%
+  );
+}
+
+.type3 {
+  background-image: linear-gradient(
+    141deg,
+    #9fb8ad 0%,
+    #2a7240 51%,
+    #249959 75%
+  );
+}
+
+.type4 {
+  background-image: linear-gradient(
+    141deg,
+    #9fb8ad 0%,
+    #815d3a 51%,
+    #9b663b 75%
+  );
+}
+
+.ranklistwrapper {
+  width: 100%;
+  padding-top: 20rpx;
+  background-color: #222222;
+  .hoverartist{
+    background-color: #282828;
+  }
+
+  .artistlist {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750rpx;
+    height: 130rpx;
+    margin-top: 5rpx;
+    margin-bottom: 10rpx;
+    display: flex;
+    align-items: center;
+    .rank {
+      margin-left: 35rpx;
+      width: 40rpx;
+      font-size: 30rpx;
+      color: #f2f0f0;
+      text-align: right;
+    }
+
+    .artistpic {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 30rpx;
+      .pic {
+        height: 100rpx;
+        width: 100rpx;
+        border-radius: 50rpx;
+      }
+    }
+
+    .artistinfo {
+      height: 100%;
+      width: 340rpx;
+      margin-left: 30rpx;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .artistname {
+        font-size: 25rpx;
+        color: #f2f0f0;
+        margin-bottom: 10rpx;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+
+      .artistworks {
+        display: flex;
+        font-size: 20rpx;
+        color: #919191;
+        .albums {
+          width: 120rpx;
+        }
+
+        .songs {
+          width: 120rpx;
+        }
+      }
+    }
+
+    .rankchange {
+      width: 100rpx;
+      margin-left: 50rpx;
+      display: flex;
+      .changeicon {
+        width: 40rpx;
+        font-size: 30rpx;
+        text-align: center;
+        line-height: 40rpx;
+      }
+
+      .changevalue {
+        width: 40rpx;
+        font-size: 30rpx;
+        text-align: center;
+        line-height: 40rpx;
+      }
+
+      .icon-up {
+        color: #f2f0f0;
+      }
+
+      .icon-nochange {
+        color: #c1c1c1;
+        font-size: 35rpx;
+      }
+
+      .icon-down {
+        color: #919191;
+      }
+    }
+
+    .change1 {
+      color: #f2f0f0;
+    }
+
+    .change0 {
+      color: #c1c1c1;
+    }
+
+    .change-1 {
+      color: #919191;
+    }
+  }
+}

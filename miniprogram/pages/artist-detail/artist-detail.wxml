@@ -1,0 +1,72 @@
+<!--pages/artist-detail/artist-detail.wxml-->
+<!-- <text>pages/artist-detail/artist-detail.wxml</text> -->
+
+<view class="mask" wx:if="{{showintro}}"></view>
+<view class="artistinfowrapper" wx:if="{{showintro}}">
+  <image class="artistpic" src="{{artistinfo.img1v1Url}}" />
+  <view class="artistinfoname">{{artistinfo.name}}</view>
+  <view class="artistdescription">
+    <view class="destitle">歌手简介：</view>
+    <view class="destext">{{artistinfo.briefDesc}}</view>
+  </view>
+  <view class="songsnum">单曲：{{artistinfo.musicSize}}首</view>
+  <view class="albumsnum">专辑：{{artistinfo.albumSize}}张</view>
+  <view class="iconfont icon-closebtn hidebtn" bindtap="closeintro"></view>
+</view>
+<view class="all" wx:if="{{!showintro}}">
+  <view class="artistpicbg" style="background-image: url('{{artistinfo.picUrl}}');">
+    <view class="artistnamewrapper" bindtap="showintro">
+      <view class="artistname">{{artistinfo.name}}</view>
+    </view>
+  </view>
+  <view class="change-search-type">
+    <view class="search-type {{isactive[0]?'active':''}}" data-index="0" bindtap="changetype">单曲</view>
+    <view class="search-type {{isactive[1]?'active':''}}" data-index="1" bindtap="changetype">专辑</view>
+  </view>
+  <view wx:if="{{isactive[0]}}">
+    <view bindtap="play" data-index="{{index}}" class="song_table" hover-class="hoversong" wx:for="{{songresult}}" wx:key="index">
+      <view class="add_icon" hover-stop-propagation="true" data-index="{{index}}" catchtap="addToPlaylist">+</view>
+      <view class="songinfo">
+        <text class="song">{{item.name}}</text>
+        <text class="singer_album">{{item.artist}} - {{item.albumname}}</text>
+      </view>
+      <view class="iconfont icon-showdetail more_icon" hover-stop-propagation="true" data-index="{{index}}" catchtap="showdetail"></view>
+    </view>
+    <!-- <view class="hasmore" wx:if="{{!hasMoresongs}}">------已经到底了噢------</view> -->
+  </view>
+  <view class="detail_inf {{songtranslateCls}}" catch:touchmove="preventmove">
+    <view class="close-list {{songanimationclass}}" data-type="song" bindtap="close"></view>
+    <view class="inf_wrapper">
+      <view class="inf_wrapper_title">歌曲详情</view>
+      <view class="inf_wrapper_ele">曲名：{{songdetail.name}}</view>
+      <view class="inf_wrapper_ele">歌手：{{songdetail.artist}}</view>
+      <view class="inf_wrapper_ele">专辑：{{songdetail.albumname}}</view>
+      <view class="inf_wrapper_ele" catchtap="addFromDetail">下一首播放</view>
+      <view class="inf_wrapper_ele" catchtap="addtolovelist">收藏至歌单</view>
+      <view class="inf_wrapper_ele">下载歌曲</view>
+      <view class="inf_wrapper_ele">分享音乐</view>
+    </view>
+  </view>
+  <view wx:if="{{isactive[1]}}">
+    <view bindtap="toAlbumpage" data-index="{{index}}" class="album_table" hover-class="hoveralbum" wx:for="{{albumresult}}" wx:key="index">
+      <image class="albumpic" mode="scaleToFill" src="{{item.picUrl}}" />
+      <view class="albuminfo">
+        <view class="name">{{item.name}}</view>
+        <view class="publishtime_artistname"><text
+            decode="true">{{item.publishTime}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.artist}}</text></view>
+      </view>
+      <view class="iconfont icon-showdetail more_icon" hover-stop-propagation="true" data-index="{{index}}" catchtap="showalbumdetail"></view>
+    </view>
+    <view class="hasmore" wx:if="{{!hasMorealbum}}">------已经到底了噢------</view>
+  </view>
+  <view class="detail_inf {{albumtranslateCls}}" catch:touchmove="preventmove">
+    <view class="close-list {{albumanimationclass}}" data-type="album" bindtap="close"></view>
+    <view class="inf_wrapper">
+      <view class="inf_wrapper_title">专辑详情</view>
+      <view class="inf_wrapper_ele">专辑名称：{{albumdetail.name}}</view>
+      <view class="inf_wrapper_ele">发布时间：{{albumdetail.publishTime}}</view>
+      <view class="inf_wrapper_ele">单曲数量：{{albumdetail.size}}</view>
+      <view class="inf_wrapper_ele">歌手：{{albumdetail.artist}}</view>
+    </view>
+  </view>
+</view>

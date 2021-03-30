@@ -1,0 +1,108 @@
+.header {
+    position: relative;
+}
+.header .bg-image {
+    width: 100%;
+    height: 500rpx;
+    /* border-radius: 15px; */
+}
+
+.loginbtn{
+    position: absolute;
+    margin: auto;
+    width: 200rpx;
+    height: 75rpx;
+    font-size: medium;
+    color: #fff;
+    background-color: transparent;
+    border: solid 3rpx #fff;
+    border-radius: 10rpx;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userinfo-wrapper {
+    position: absolute;
+    margin: auto;
+    width: 160rpx;
+    height: 160rpx;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userinfo-avatar {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    text-align: center;
+    color: #aaa;
+    font-size: 32rpx;
+}
+.userinfo-num {
+    display: flex;
+    flex-direction:row;
+    color: #aaa;
+    width:150rpx;
+    font-size: 18x;
+}
+.followwrapper{
+    position: absolute;
+    top: 420rpx;
+    left: 75rpx;
+    right: 75rpx;
+    width: 600rpx;
+    height: 60rpx;
+    display: flex;
+}
+.followinfo{
+    flex: 1;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    color: #aaa;
+}
+.content {
+    height: 100%;
+    /* margin-top: 30rpx; */
+}
+.content .tab .item{
+    display: flex;
+    font-size: 14px;
+    color: #aaa;
+    padding: 20rpx 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-bottom: 1rpx solid #333;
+}
+.tab .item .icon ,.tab .item .more {
+    flex: 0 0 60rpx;
+    /* text-align: center; */
+    /* height: 50rpx; */
+    /* line-height: 60rpx; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tab .item .text {
+    flex: 0 0 540rpx;
+    padding-left: 10rpx;
+}
+.tab .item .icon image,.tab .item .more image {
+    width: 38rpx;
+    height: 38rpx;
+}

@@ -1,0 +1,26 @@
+<!--pages/artist-rank/artist-rank.wxml-->
+<view class="topwrapper">
+    <view class="bg type{{type}}"></view>
+    <view class="rankname">歌手榜·{{typename}}</view>
+</view>
+<view class="ranklistwrapper">
+    <view class="artistlist" hover-class="hoverartist" data-index="{{index}}" wx:for="{{artistlist}}" wx:key="index" bindtap="toArtistpage">
+        <view class="rank">{{index+1}}</view>
+        <view class="artistpic">
+            <image class="pic" src="{{item.img1v1Url}}" data-index="{{index}}" binderror="loadimgerror" />
+        </view>
+        <view class="artistinfo">
+            <view class="artistname">{{item.name}}</view>
+            <view class="artistworks">
+                <view class="albums">{{item.albumSize}}张专辑</view>
+                <view class="songs">{{item.musicSize}}首单曲</view>
+            </view>
+        </view>
+        <view class="rankchange change{{item.change}}">
+            <view
+                class="iconfont {{item.change==0?'icon-nochange':''}} {{item.change==1?'icon-up':''}} {{item.change==-1?'icon-down':''}} changeicon">
+            </view>
+            <view class="changevalue">{{item.rankchange}}</view>
+        </view>
+    </view>
+</view>

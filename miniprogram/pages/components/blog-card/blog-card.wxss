@@ -1,0 +1,230 @@
+/* page {
+  background: #000;
+} */
+
+.blog {
+  padding: 20rpx;
+  background: #fff;
+  font-family: Arial,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "STHeiti",
+    "Microsoft YaHei",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+  color: #333333;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.blog-title {
+  display: flex;
+  position: relative;
+}
+
+.blog-box {
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-user {
+  font-size: 32rpx;
+  font-family: "微软正黑体", "Microsoft YaHei";
+  font-weight: 500;
+}
+
+.blog-time {
+  color: #a0a0a0;
+  font-size: 27rpx;
+  margin-bottom: 4rpx;
+}
+
+.blog-author {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  margin-top: 2rpx;
+  border: 1px solid rgba(216, 30, 6, 0.4);
+}
+
+.blog-love {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  right: 10rpx;
+  transform: translateY(-50%);
+}
+
+.icon-dianzan {
+  position: absolute;
+  right: 90rpx;
+  font-size: 54rpx;
+  opacity: 0.7;
+  color:#333333;
+}
+
+.love {
+  color: #d81e06;
+  opacity: 1;
+  animation-duration: 1s;
+  animation-name: lovesize;
+  animation-fill-mode: forwards;
+}
+
+@keyframes lovesize {
+  0% {
+    font-size: 54rpx;
+  }
+
+  33% {
+    font-size: 60rpx;
+  }
+
+  66% {
+    font-size: 42rpx;
+  }
+
+  99% {
+    font-size: 54rpx;
+  }
+}
+
+.love-num {
+  display: inline-block;
+  font-size: 32rpx;
+  width: 70rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 2rpx 8rpx;
+  background: #e7e7e79a;
+  color: rgba(216, 31, 6);
+  margin-left: 10rpx;
+  margin-top: 8rpx;
+}
+
+.bog-content {
+  width: 100%;
+  padding: 20rpx 4rpx;
+  font-size: 30rpx;
+}
+
+.blog-img {
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.blog-images .blog-img {
+  width: 220rpx;
+  height: 220rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.blog-images .blog-img:nth-child(3n) {
+  margin-right: 0;
+}
+
+.musicwrapper {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  background-color: #f0f0f0;
+  border: solid 8rpx #f0f0f0;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.musicwrapper .picandCtrl {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+}
+
+.musicwrapper .picandCtrl .albumpic {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.musicwrapper .picandCtrl .control {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.musicwrapper .picandCtrl .control .playbtn {
+  width: 50rpx;
+  height: 50rpx;
+  /* width: 100rpx; */
+  /* height: 100rpx; */
+  font-size: 50rpx;
+  border-radius: 25rpx;
+  color: #e2e2e2;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.musicwrapper .picandCtrl .control .stopbtn {
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 50rpx;
+  border-radius: 25rpx;
+  color: #e2e2e2;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.musicwrapper .infowrapper {
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.musicwrapper .infowrapper .name {
+  color: #515151;
+  font-size: 25rpx;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.musicwrapper .infowrapper .artandAlbum {
+  color: #757575;
+  font-size: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_1936811_xssw7xi35hn.eot?t=1602686656917'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_1936811_xssw7xi35hn.eot?t=1602686656917#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAVgAAsAAAAAC4wAAAURAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCEGAqIbIcXATYCJAMoCxYABCAFhG0HgQEb1gkjESZs0kD2zwQ7JjIe3LTFEB3dkVyEpwUS/D434aAmeCD+9v2ZO3NvPauVFVZArcm8H+z1zRIgYA5xnDlEm0tN0u3CAiJU+AuGdvHJPWS/f0g+WZ9xdJn6tYLVsbMHecWdb62nlAr4YglQKR0/IWkg4YBFjGOx2hysWi6bqJ/2wxBANBZliabN21oxo6CjBCBGDhvSD3MrgJqRC8xuY+RChViNjllboj0HVuXfL76hcmbQ0CX0qI6Dmw2kYYiwRTojTnpKF05zMWB3GUigLFAgto8mNpJloyxJ9OX3KYYDyRJJtBChqFCxUPnQxvwclmFLJEKfkbcY9RIk83/zwEwUAg2JCYWBDsIAjtg1e2YzCkLEFMwQijKMOYvBh4CzPHxocG4EBQn5wyiYICwpKAjn+TDgtGAKOgDR6QWpIBmiKggP5GqaNyQSwY1lVWtkyZIqdh1VubmJLa94dXKynLF+/8GtGed8whuyu7+wer60LfN12HRgy+bU5+7ovtyX76g63dM3HdrmUk+7aSHD0d2WutuuP7h1W8YrXwxQDTHc5esXp8XO0GJY4pmq/lr3F937H7ycqW25UmLAIdeQOGJn2DY4Dy9Nt6sNm/cvDeD2unX9xaM7MxybDsUc6Gff6Dq2LM2mb9x2aJnTjyvHpgtHnKnW9fujD/Yzd8p0t9vq8dh8PofX23O9Jqs1KR11ZThk445NyxTQyseHXPRadvlqXPDkbXf3q3WnThm1NH3wRlfGEAnewEF9PTxj/Mal+zejNmw5sCxjwqZtrq1je4+rW3Blt+a1ra325Iyqpe4KcVfdUUIkyAhu3XRW0QEbmpytujB/eak2flWwoAoof8GC/gzZ1v5Glum1K51URSk9UIfezPomzNla3KsCQA168AINo62KlqcCBaVzhh/QaX6a7tCFxsfte/5A6bp6wEmKiaX+y+IH06bug8yVTIO7mzbXLUfSqQ8qfkDhAaV//fVFieMlPjp8cF/epdE5sy/l7Tty4o+qR40Pv/0p94jbTaDUrDh3tORqiXGR6V5lsSgvJykmlnpc3ISz19TffytYr60RlvUAY96ctXkRkSxeOGtJQV+yaG8ckbgfGzZMSIhdP+ZzevFjg4YFCjToZKreFtPG0R34uEH8kVs7t2RvSaJHcptk3oOLOGndoAk196xvP/CR5dTXic8Sgqcsjzav9QULBScsElca9VKkz22AiFMhXQDa9+L0ceLtlJKNIHIrpzcszJf/5nUvKMTPc2yVOiTFr+Fn8H7xU5k+CXV/q1YAvD9R4fbaYr5pRgNh42ffKLhOXc0UjFbnlcWmn1jQyo/GobU60UDknkn2kWlXmnANBOa1cQcaJvJAYqYoXbHLgk4MVcHATAOIpowWl8eQYjwSoaKA0hasQJDoFGjEcwskiV7QFftD0En3HRgkJiGazf+93PDZa9m8CVrFAO4K2TPFKKymGP2NaVusNM254h+l5jL0TddtfyGhmDilntKgGiEKr/C5ehwuC0MRntBrM6qWY9vGsXdqPK87441AlkIBcK5A5jES097K9L7+G0o2C0tmFr1o/0OiytsHvUYnQP9ykNCioUysTpKBsloE4m4kW4FPFkMLbzBQxvebIE81RoVacdSyzaKoo3HvWh9t819qCeqHaYplO67yfD0eVi7E54ey2Gv+1o/EfrSU8LCV28BnevQLV3RKpo58Dqg2L4+6CTnr5yeFwZ430t0OAAA=') format('woff2'),
+  url('//at.alicdn.com/t/font_1936811_xssw7xi35hn.woff?t=1602686656917') format('woff'),
+  url('//at.alicdn.com/t/font_1936811_xssw7xi35hn.ttf?t=1602686656917') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_1936811_xssw7xi35hn.svg?t=1602686656917#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-stopnow:before {
+  content: "\e625";
+}
+
+.icon-playnow:before {
+  content: "\e62e";
+}

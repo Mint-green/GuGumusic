@@ -1,0 +1,34 @@
+<view class="search-page">
+  <view class="search-wrapper">
+    <input class="search" value="{{searchwords}}" placeholder="{{default_keywords}}" placeholder-style="color: #ffcd32;" focus="{{focus}}"
+      placeholder-class="placeholder" bindinput="handleInput" />
+    <view class="button" bindtap="doSearch" data-keywords="{{search_keywords==''?default_keywords:search_keywords}}">搜索
+    </view>
+  </view>
+  <view class="searchsuggest" bindtap="doSearch" data-keywords="{{item.keywords}}" wx:if="{{havesearch_suggest}}"
+    wx:for="{{search_suggest}}" wx:key="index">{{item.keywords}}</view>
+  <view class="main" wx:if="{{!havesearch_suggest}}">
+    <view class="hot-wrapper">
+      <view class="title">热门搜索: </view>
+      <view class="hot-details">
+        <view class="item" wx:for="{{hot_search}}" wx:key="index" bindtap="doSearch" data-keywords="{{item.searchWord}}"
+          wx:if="{{!havesearch_suggest}}">
+          {{item.searchWord}}
+        </view>
+      </view>
+    </view>
+    <view class="history">
+      <view class="title">历史搜索: </view>
+      <scroll-view class="history-wrapper" scroll-y>
+        <view class="item" wx:for="{{history}}" wx:key="index" bindtap="doSearch" data-keywords="{{item}}">
+          <view class="txt">{{item}}</view>
+          <view class="x" catchtap="deleteHistroySearch" data-txt="{{item}}">X</view>
+        </view>
+        <view class="clear" catchtap="deleteHistroySearch" wx:if="{{history.length>0}}">
+          <i class="icon-clear"></i>
+          清空搜索历史
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

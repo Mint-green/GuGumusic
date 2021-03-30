@@ -1,0 +1,89 @@
+.artist_table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700rpx;
+  height: 130rpx;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  display: flex;
+}
+.artist_table .artistpicWrapper {
+  flex: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.artist_table .artistpicWrapper .artistpic {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50rpx;
+  margin-left: 20rpx;
+}
+.artist_table .artistnameWrapper {
+  flex: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.artist_table .artistnameWrapper .artistName {
+  margin-left: 10rpx;
+  width: 400rpx;
+  font-size: 25rpx;
+  color: #f2f0f0;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.artist_table .artistnameWrapper .artistAlbumNum {
+  margin-left: 10rpx;
+  font-size: 20rpx;
+  color: #919191;
+}
+.album_table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700rpx;
+  height: 130rpx;
+  position: relative;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  display: flex;
+  align-items: center;
+}
+.album_table .albumpic {
+  position: absolute;
+  left: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 15rpx;
+}
+.album_table .albuminfo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 150rpx;
+  width: 400rpx;
+}
+.album_table .albuminfo .name {
+  font-size: 25rpx;
+  /* line-height: 70rpx; */
+  color: #f2f0f0;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.album_table .albuminfo .publishtime_artistname {
+  font-size: 20rpx;
+  color: #919191;
+  /* line-height: 60rpx; */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

@@ -1,0 +1,100 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+}
+.header .bg-image {
+    width:90%;
+    height: 375rpx;
+    border-radius: 15px;
+    
+}
+.header .userinfo-wrapper {
+    position: absolute;
+    margin: auto;
+    width: 128rpx;
+    height: 128rpx;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50rpx;
+}
+ .userinfo-avatar {
+    width: 130rpx;
+    
+    border-radius: 50%;
+}
+.header .userinfo-wrapper .userinfo-nickname {
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+}
+.header .userinfo-wrapper .userinfo-num {
+    display: flex;
+    flex: 3;
+    flex-direction:r;
+    color: #aaa;
+    width:150rpx;
+    font-size: 18x;
+}
+.leadtext{
+    padding: 15rpx;
+    margin-left: 30rpx;
+    font-style: 30px;
+    color: rgb(219, 193, 46);
+}
+.leadtext .text1{
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+}
+.leadtext .more{
+    flex: 0 0 60rpx;
+    text-align: right;
+    height: 50rpx;
+    line-height: 60rpx;
+    margin-right: 15rpx;
+}
+.blog{
+    background-color: rgb(90, 90, 90);
+    width:90%;
+    height: 300rpx;
+    border-radius: 15px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content: center;
+}
+.blog .songpic{
+    display: flex;
+    flex: 3;
+    align-self: center;
+    width: 35%;
+    padding: 15rpx;
+
+}
+.blog .blogtext {
+    display: flex;
+    width: 95%;
+    flex: 10;
+    padding:15rpx ;
+  line-height: 130%;
+   font-size:38rpx;
+   margin-bottom: 30rpx;
+
+}
+.songlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(90, 90, 90);
+    width:90%;
+    border-radius: 15px;
+    margin: auto;
+}
+.songlist .songlistpic{
+    padding: 20rpx;
+    width: 40%;
+}

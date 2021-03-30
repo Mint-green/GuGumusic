@@ -1,0 +1,334 @@
+/* pages/search_result/search_result.wxss */
+
+page {
+    padding-bottom: 100rpx;
+}
+
+.search-box {
+    padding: 10rpx 30rpx;
+    position: relative;
+}
+
+.search-box .search {
+    border-radius: 12rpx;
+    border: 1px solid #333;
+    font-size: 28px;
+    height: 50rpx;
+}
+
+.placeholder {
+    font-size: 28rpx;
+    /* text-align: center; */
+    padding-left: 20rpx;
+}
+
+.search-box .icon-search {
+    position: absolute;
+    right: 40rpx;
+    top: 20rpx;
+    font-size: 18px;
+}
+
+.change-search-type {
+    width: 710rpx;
+    display: flex;
+    /* margin-top: 20px; */
+    height: 70rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20rpx;
+    align-items: center;
+}
+
+.search-type {
+    flex: 1;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32rpx;
+    color: rgb(210, 210, 210);
+}
+
+.active {
+    color: #fff;
+    font-weight: 600;
+    font-size: 36rpx;
+}
+
+/* .title {
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 20rpx;
+    color: #fff;
+    text-indent: 50rpx;
+} */
+
+.song_table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750rpx;
+    height: 100rpx;
+    position: relative;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+}
+
+.add_icon {
+    position: absolute;
+    top: 32.5rpx;
+    left: 45rpx;
+    border: solid 2rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    width: 35rpx;
+    height: 35rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.more_icon {
+    position: absolute;
+    top: 20rpx;
+    right: 35rpx;
+    color: #f2f0f0;
+    font-size: 28rpx;
+    font-weight: 600;
+    width: 80rpx;
+    height: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.songinfo {
+    width: 500rpx;
+    height: 100%;
+    margin-left: 115rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10rpx;
+    /* align-items: center; */
+}
+
+.song {
+    font-size: 25rpx;
+    /* line-height: 70rpx; */
+    color: #f2f0f0;
+    margin-bottom: 10rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.singer_album {
+    font-size: 20rpx;
+    color: #919191;
+    /* line-height: 60rpx; */
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.uptranslate {
+    transform: translateY(-100%)!important;
+}
+
+.downtranslate {
+    transform: translateY(100%)!important;
+}
+
+.detail_inf {
+    position: fixed;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    z-index: 150;
+    transition: all 0.5s;
+}
+
+.close-list {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.inf_wrapper {
+    position: absolute;
+    /*//bottom: -860rpx;*/
+    bottom: 0;
+    /*transform: translateY(860rpx);*/
+    left: 0;
+    right: 0;
+    /* height: 960rpx; */
+    width: 100%;
+    background: #1c1c1c;
+    z-index: 2;
+    transition: all 0.5s;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+}
+
+.inf_wrapper_title {
+    height: 80rpx;
+    width: 100%;
+    text-align: center;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+.inf_wrapper_ele {
+    height: 70rpx;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: solid rgba(255, 255, 255, 0.1) 1rpx;
+    color: #e1e1e1;
+    font-size: 25rpx;
+    line-height: 70rpx;
+    padding-left: 20rpx;
+}
+
+.hasmore {
+    margin-left: auto;
+    margin-right: auto;
+    width: 700rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 20rpx;
+    color: #919191;
+    text-align: center;
+}
+
+.artist_table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750rpx;
+    height: 130rpx;
+    margin-top: 5rpx;
+    margin-bottom: 10rpx;
+    display: flex;
+}
+
+.artist_table .artistpicWrapper {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artist_table .artistpicWrapper .artistpic {
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 50rpx;
+    margin-left: 45rpx;
+}
+
+.artist_table .artistnameWrapper {
+    flex: 5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.artist_table .artistnameWrapper .artistName {
+    margin-left: 10rpx;
+    width: 400rpx;
+    font-size: 25rpx;
+    color: #f2f0f0;
+    margin-bottom: 10rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.artist_table .artistnameWrapper .artistAlbumNum {
+    margin-left: 10rpx;
+    font-size: 20rpx;
+    color: #919191;
+}
+
+.album_table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750rpx;
+    height: 130rpx;
+    position: relative;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    display: flex;
+    align-items: center;
+}
+
+.album_table .albumpic {
+    position: absolute;
+    left: 55rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 15rpx;
+}
+
+.album_table .albuminfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 195rpx;
+    width: 400rpx;
+}
+
+.album_table .albuminfo .name {
+    font-size: 25rpx;
+    /* line-height: 70rpx; */
+    color: #f2f0f0;
+    margin-bottom: 10rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.album_table .albuminfo .publishtime_artistname {
+    font-size: 20rpx;
+    color: #919191;
+    /* line-height: 60rpx; */
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.album_table .more_icon{
+    top: 35rpx;
+}
+
+.show {
+    animation: showmask 0.2s 0.5s linear 1 forwards;
+    -webkit-animation: showmask 0.2s 0.5s linear 1 forwards;
+}
+
+.hoverresult{
+    background-color: #282828;
+}
+
+@keyframes showmask {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}

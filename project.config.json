@@ -1,0 +1,138 @@
+{
+  "description": "项目配置文件。",
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.0",
+  "appid": "wx9d444179caa0a6b5",
+  "projectname": "GuGumusic",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "二维码",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": "1011"
+        },
+        {
+          "id": -1,
+          "name": "进入播放页面",
+          "pathName": "pages/player/player",
+          "query": "name=1",
+          "scene": "1011"
+        },
+        {
+          "id": -1,
+          "name": "进入我的",
+          "pathName": "pages/my/my",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "进入搜索页面",
+          "pathName": "pages/search/search",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "pages/blog/blog",
+          "pathName": "pages/blog/blog",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "blog-card",
+          "pathName": "pages/components/blog-card/blog-card",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "评论显示页",
+          "pathName": "pages/blog-comment/blog-comment",
+          "query": "blogId=db9f2d6c5ef6d81b0070a56e5bb85a72",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "搜索结果",
+          "pathName": "pages/search_result/search_result",
+          "query": "keywords=心墙",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "歌单详情页",
+          "pathName": "pages/playlist/playlist",
+          "query": "id=19723756",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "歌手详情",
+          "pathName": "pages/artist-detail/artist-detail",
+          "query": "id= 1195028",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "专辑详情",
+          "pathName": "pages/album-detail/album-detail",
+          "query": "id= 3438282",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

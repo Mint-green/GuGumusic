@@ -1,0 +1,66 @@
+.musicwrapper {
+  width: 95%;
+  margin: auto;
+  display: flex;
+}
+
+.musicwrapper .picandCtrl {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+}
+
+.musicwrapper .picandCtrl .albumpic {
+  width: 100%;
+  height: 100%;
+}
+
+.musicwrapper .picandCtrl .control {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.musicwrapper .picandCtrl .control .playbtn {
+  width: 40rpx;
+}
+
+.musicwrapper .picandCtrl .control .icon-playnow {
+  color: #ffffff;
+}
+
+.musicwrapper .picandCtrl .control .stopbtn {
+  width: 40rpx;
+}
+
+.musicwrapper .picandCtrl .control .icon-stopnow {
+  color: #ffffff;
+}
+
+.musicwrapper .infowrapper {
+  padding-left: 20rpx;
+}
+
+.musicwrapper .infowrapper .name {
+  color: #f2f0f0;
+  font-size: 25rpx;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.musicwrapper .infowrapper .artandAlbum {
+  color: #919191;
+  font-size: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

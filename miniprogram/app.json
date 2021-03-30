@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/search_result/search_result",
+    "pages/lovelist/lovelist",
+    "pages/playlist/playlist",
+    "pages/artist-detail/artist-detail",
+    "pages/album-detail/album-detail",
+    "pages/artist-rank/artist-rank",
+    "pages/logs/logs",
+    "pages/player/player",
+    "pages/blog/blog",
+    "pages/blog-comment/blog-comment",
+    "pages/blog-edit/blog-edit",
+    "pages/my/my",
+    "pages/myfocus/myfocus",
+    "pages/userpage/userpage",
+    "pages/bloglist/profile-bloglist"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#222",
+    "navigationBarTitleText": "咕咕音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#919191",
+    "selectedColor": "#ffcd32",
+    "backgroundColor": "#333",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "static/image/home-1.png",
+        "selectedIconPath": "static/image/home-2.png"
+      },
+      {
+        "pagePath": "pages/player/player",
+        "text": "正在播放",
+        "iconPath": "static/image/rank-1.png",
+        "selectedIconPath": "static/image/rank-2.png"
+      },
+      {
+        "pagePath": "pages/blog/blog",
+        "text": "博客",
+        "iconPath": "static/image/blog-1.png",
+        "selectedIconPath": "static/image/blog-2.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我",
+        "iconPath": "static/image/my.png",
+        "selectedIconPath": "static/image/my-1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ]
+}

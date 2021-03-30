@@ -1,0 +1,14 @@
+<view class="blog-background">
+ <!-- 我的博客展示卡片 -->
+  <scroll-view class="blog-container" scroll-y="true">
+    <block wx:for="{{bloglist}}" wx:key="_id">
+      <view class="blog-pannel">
+          <x-blog-card 
+            blog="{{item}}"
+            data-blogid="{{item._id}}"
+          />
+          <view class="deletebtn" bindtap="delete" data-index="{{index}}">删除</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

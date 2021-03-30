@@ -1,0 +1,69 @@
+<!--pages/album-detail/album-detail.wxml-->
+<view class="topinfowarpper">
+    <view class="bg">
+        <image class="bgimg" src="{{albuminfo.picUrl}}" mode="scaleToFill" />
+    </view>
+    <view class="albumpic">
+        <image class="pic" src="{{albuminfo.picUrl}}" mode="widthFix" />
+    </view>
+    <view class="briefinfo">
+        <view class="albumname">{{albuminfo.name}}</view>
+        <view class="albumartist">{{albuminfo.artist}}</view>
+        <view class="albumpublishtime">发行时间 {{albuminfo.publishTime}}</view>
+    </view>
+</view>
+<view class="bigwrapper">
+    <view class="change-search-type">
+        <view class="search-type {{isactive[0]?'active':''}}" data-index="0" bindtap="changetype">歌曲列表</view>
+        <view class="search-type {{isactive[1]?'active':''}}" data-index="1" bindtap="changetype">专辑信息</view>
+    </view>
+    <view wx:if="{{isactive[0]}}">
+        <view bindtap="play" data-index="{{index}}" class="song_table" hover-class="hoversong" wx:for="{{songresult}}" wx:key="index">
+            <view class="add_icon" hover-stop-propagation="true" data-index="{{index}}" catchtap="addToPlaylist">+</view>
+            <view class="songinfo">
+                <text class="song">{{item.name}}</text>
+                <text class="singer_album">{{item.artist}} - {{item.albumname}}</text>
+            </view>
+            <view class="iconfont icon-showdetail more_icon" hover-stop-propagation="true" data-index="{{index}}" catchtap="showdetail"></view>
+        </view>
+    </view>
+    <view class="detail_inf {{songtranslateCls}}" catch:touchmove="preventmove">
+        <view class="close-list {{songanimationclass}}" data-type="song" bindtap="close"></view>
+        <view class="inf_wrapper">
+            <view class="inf_wrapper_title">歌曲详情</view>
+            <view class="inf_wrapper_ele">曲名：{{songdetail.name}}</view>
+            <view class="inf_wrapper_ele">歌手：{{songdetail.artist}}</view>
+            <view class="inf_wrapper_ele">专辑：{{songdetail.albumname}}</view>
+            <view class="inf_wrapper_ele" catchtap="addFromDetail">下一首播放</view>
+            <view class="inf_wrapper_ele" catchtap="addtolovelist">收藏至歌单</view>
+            <view class="inf_wrapper_ele">下载歌曲</view>
+            <view class="inf_wrapper_ele">分享音乐</view>
+        </view>
+    </view>
+    <view wx:if="{{isactive[1]}}">
+        <view class="infowrapper innerwarpper">
+            <view class="infoname">专辑</view>
+            <view class="infovalue">{{albuminfo.name}}</view>
+        </view>
+        <view class="infowrapper innerwarpper">
+            <view class="infoname">歌手</view>
+            <view class="infovalue">{{albuminfo.artist}}</view>
+        </view>
+        <view class="infowrapper innerwarpper">
+            <view class="infoname">歌曲数量</view>
+            <view class="infovalue">{{albuminfo.size}}首</view>
+        </view>
+        <view class="infowrapper innerwarpper">
+            <view class="infoname">发行时间</view>
+            <view class="infovalue">{{albuminfo.publishTime}}</view>
+        </view>
+        <view class="infowrapper innerwarpper">
+            <view class="infoname">发行公司</view>
+            <view class="infovalue">{{albuminfo.company}}</view>
+        </view>
+        <view class="lastwrapper">
+            <view class="infoname">专辑介绍</view>
+            <view class="infovalue"><text decode="true">{{albuminfo.description}}</text></view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<scroll-view class="container" scroll-y>
+	<view class="search-wrapper" catchtap="toSearch">
+		<input class="search" placeholder="输入歌手名、歌曲名搜索" placeholder-style="color: #ffcd32;" disabled placeholder-class="placeholder" />
+		<i class="icon-search"></i>
+	</view>
+	<view class="myplaylist-wrapper">
+		<view class="myplaylist-title">我的歌单</view>
+		<view class="playlist-item" bindtap="tolovelist">
+			<view class="playlist-pic">
+				<image class="lovelist-pic" src="../../static/image/lovelist.png" mode="widthFix" lazy-load="false" />
+			</view>
+			<view class="playlist-text">
+				<view class="playlist-name">我喜欢</view>
+				<view class="playlist-length" hidden="{{!isAuthorize}}">{{lovelist.length}} 首</view>
+				<view class="playlist-length" hidden="{{isAuthorize}}">请先登录再查看歌单噢~</view>
+			</view>
+		</view>
+	</view>
+	<view class="singger-list">
+		<view class="list-title">歌手榜</view>
+		<view class="singer-type-wrapper">
+			<view class="singer-type type1" bindtap="toArtistRank" data-type="1">华语</view>
+			<view class="singer-type type2" bindtap="toArtistRank" data-type="2">欧美</view>
+			<view class="singer-type type3" bindtap="toArtistRank" data-type="3">韩国</view>
+			<view class="singer-type type4" bindtap="toArtistRank" data-type="4">日本</view>
+		</view>
+	</view>
+	<view class="hot-list">
+		<view class="list-title" bindtap="foldordisplay" data-type="toplist">热门榜单推荐
+			<image class="fold-display" src="../../static/image/display.png" hidden="{{!ishotlistfold}}" mode="widthFix" lazy-load="false" />
+			<image class="fold-display" src="../../static/image/fold.png" hidden="{{ishotlistfold}}" mode="widthFix" lazy-load="false" />
+		</view>
+		<view class="rank" ref="rank" wx:if="{{!ishotlistfold}}">
+			<view :data="topList" class="toplist" ref="toplist">
+				<view>
+					<view bindtap="toRankDetail" data-id="{{item.id}}" class="item" wx:for="{{topList}}" wx:key="id">
+						<view class="icon">
+							<image lazy-load mode="widthFix" src="{{item.coverImgUrl}}" />
+						</view>
+						<view class="songlist" wx:if="{{item.tracks[0]}}">
+							<view class="song" wx:for-item="item1" wx:for="{{item.tracks}}" wx:key="index">
+								<text>{{index + 1}}. </text>
+								<text>{{item1.first}} - {{item1.second}}</text>
+							</view>
+						</view>
+						<view class="nosonglist" wx:if="{{!item.tracks[0]}}">
+							<view class="songlistname">{{item.name}}</view>
+							<view class="songlistupdateFrequency">{{item.updateFrequency}}</view>
+						</view>
+					</view>
+				</view>
+				<view class="loading-container" wx:if="{{!topList[0]}}">
+					<loading></loading>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="hot-list">
+		<view class="list-title" bindtap="foldordisplay" data-type="playlist">歌单推荐
+			<image class="fold-display" src="../../static/image/display.png" hidden="{{!ispersonalizelistfold}}" mode="widthFix" lazy-load="false" />
+			<image class="fold-display" src="../../static/image/fold.png" hidden="{{ispersonalizelistfold}}" mode="widthFix" lazy-load="false" />
+		</view>
+		<view class="rank" ref="rank" wx:if="{{!ispersonalizelistfold}}">
+			<view :data="personalizelist" class="toplist" ref="toplist">
+				<view>
+					<view bindtap="toRankDetail" data-id="{{item.id}}" class="item" wx:for="{{personalizelist}}" wx:key="id">
+						<view class="icon">
+							<image lazy-load mode="widthFix" src="{{item.picUrl}}" />
+						</view>
+						<view class="nosonglist">
+							<view class="playlistname">{{item.name}}</view>
+							<view class="playlistcopywriter">{{item.copywriter}}</view>
+						</view>
+					</view>
+				</view>
+				<view class="loading-container" wx:if="{{!personalizelist[0]}}">
+					<loading></loading>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

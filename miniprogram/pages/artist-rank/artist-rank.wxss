@@ -1,0 +1,135 @@
+.topwrapper {
+  width: 100%;
+  height: 500rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topwrapper .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(40rpx);
+  filter: blur(40rpx);
+}
+.topwrapper .rankname {
+  font-size: 50rpx;
+  color: #fff;
+}
+.type1 {
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #44878f 51%, #689fb3 75%);
+}
+.type2 {
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #884e77 51%, #622a64 75%);
+}
+.type3 {
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #2a7240 51%, #249959 75%);
+}
+.type4 {
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #815d3a 51%, #9b663b 75%);
+}
+.ranklistwrapper {
+  width: 100%;
+  padding-top: 20rpx;
+  background-color: #222222;
+}
+.ranklistwrapper .hoverartist {
+  background-color: #282828;
+}
+.ranklistwrapper .artistlist {
+  margin-left: auto;
+  margin-right: auto;
+  width: 750rpx;
+  height: 130rpx;
+  margin-top: 5rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.ranklistwrapper .artistlist .rank {
+  margin-left: 35rpx;
+  width: 40rpx;
+  font-size: 30rpx;
+  color: #f2f0f0;
+  text-align: right;
+}
+.ranklistwrapper .artistlist .artistpic {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+.ranklistwrapper .artistlist .artistpic .pic {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50rpx;
+}
+.ranklistwrapper .artistlist .artistinfo {
+  height: 100%;
+  width: 340rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ranklistwrapper .artistlist .artistinfo .artistname {
+  font-size: 25rpx;
+  color: #f2f0f0;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.ranklistwrapper .artistlist .artistinfo .artistworks {
+  display: flex;
+  font-size: 20rpx;
+  color: #919191;
+}
+.ranklistwrapper .artistlist .artistinfo .artistworks .albums {
+  width: 120rpx;
+}
+.ranklistwrapper .artistlist .artistinfo .artistworks .songs {
+  width: 120rpx;
+}
+.ranklistwrapper .artistlist .rankchange {
+  width: 100rpx;
+  margin-left: 50rpx;
+  display: flex;
+}
+.ranklistwrapper .artistlist .rankchange .changeicon {
+  width: 40rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.ranklistwrapper .artistlist .rankchange .changevalue {
+  width: 40rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.ranklistwrapper .artistlist .rankchange .icon-up {
+  color: #f2f0f0;
+}
+.ranklistwrapper .artistlist .rankchange .icon-nochange {
+  color: #c1c1c1;
+  font-size: 35rpx;
+}
+.ranklistwrapper .artistlist .rankchange .icon-down {
+  color: #919191;
+}
+.ranklistwrapper .artistlist .change1 {
+  color: #f2f0f0;
+}
+.ranklistwrapper .artistlist .change0 {
+  color: #c1c1c1;
+}
+.ranklistwrapper .artistlist .change-1 {
+  color: #919191;
+}

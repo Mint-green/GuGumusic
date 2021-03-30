@@ -1,0 +1,40 @@
+<view>
+  <view class="header">
+    <image src="./bg.png" class="bg-image"/>
+    <view class="userinfo-wrapper">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" mode="widthFix"></image>
+      <!-- 暂用自己的头像替代 -->
+      <view class="userinfo-nickname">ddd</view>
+      <!-- 预设内容 -->
+     <view class="userinfo-num" >关注：{{0}} </view>
+     <view class="userinfo-num" >粉丝：{{0}}</view>
+     <!-- 预设内容 -->
+    </view>
+  </view>
+  </view>
+
+<view mode="float:left" class="leadtext">
+    <view class="text1"> TA的博客</view>
+    <navigator url=""  class="more">更多 ></navigator> 
+    <!-- 到博客页 -->
+</view>
+    
+<view class="blog" >
+  
+    <image src="./tupian.png" class="songpic" mode="widthFix"/>
+    <!-- 预设图片 -->
+    <cover-view class="blogtext" style="word-break:break-all;white-space:pre-line">
+      123123123123
+    </cover-view>
+    <!-- 预设内容 -->
+  
+</view>
+<view mode="float:left" class="leadtext">
+    <view class="text1"> TA的歌单</view>
+    <navigator url=""  class="more">歌单内容 ></navigator>
+    <!-- 到歌单页 -->
+</view>
+<view class="songlist">
+  <image src="./tupian.png" class="songlistpic" mode="widthFix"/>
+  <!-- 预设图片 -->
+</view>

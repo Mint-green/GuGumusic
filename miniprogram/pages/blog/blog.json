@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "x-blog-control":"/pages/components/blog-control/blog-control",
+    "x-blog-card": "/pages/components/blog-card/blog-card",
+    "x-search": "/pages/components/search/search",
+    "x-author": "/pages/components/author/author"
+  },
+  "navigationBarTitleText": "博客广场",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#222222"
+}

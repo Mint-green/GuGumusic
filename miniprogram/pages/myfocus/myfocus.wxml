@@ -1,0 +1,22 @@
+<view class="first_tab">
+        <navigator class="goods_item" wx:for="{{focusList}}" wx:key="id">
+            
+            <view class="goods_img_wrap">
+              <image mode="widthFix" src="./time.png"></image>
+              <!-- 预设头像 -->
+            </view>
+            <view class="focus_id">
+                   {{item.user_name}}
+            </view>
+       
+            <view class="goods_info_wrap">
+              <image src="./fensi.png" mode="widthFix" class="goods_icon"></image>
+              <view class="goods_name"> {{item.fans}}</view>
+               <image src="./aixin.png" mode="widthFix" class="goods_icon"></image>
+              <view class="goods_price"> {{item.like}}</view>
+            </view>
+          </navigator>
+          
+            
+            
+    </view>
