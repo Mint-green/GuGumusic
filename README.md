@@ -43,7 +43,14 @@ A miniprogram for music and blog.
 * 博客检索
 * 优化播放页面体验
 * 更大的曲库/doge
-* 待添加。。。
+* 待添加。。。（欢迎提出建议，但实现嘛就/doge
+
+
+
+### 使用实例
+
+<img src="images/e.g.1.jpg" width="24%" alt="首页"> <img src="images/e.g.2.jpg" width="24%" alt="歌单页"><img src="images/e.g.3.jpg" width="24%" alt="按曲名搜索"><img src="images/e.g.4.jpg" width="24%" alt="按歌手搜索">
+<img src="images/e.g.5.jpg" width="24%" alt="按专辑搜索"> <img src="images/e.g.6.jpg" width="24%" alt="播放页"><img src="images/e.g.7.jpg" width="24%" alt="显示歌词"><img src="images/e.g.8.jpg" width="24%" alt="博客页">
 
 
 
@@ -52,25 +59,47 @@ A miniprogram for music and blog.
 #### 1.下载本项目 or Fork
 
 #### 2.使用微信开发者工具打开
-1. 需要先注册[小程序](https://mp.weixin.qq.com/)账号，获得Appid，并能够使用云开发能力，
+1. 本小程序用到了微信提供的云开发能力，相当于一个简易的服务器，故需要先注册小程序账号，获得Appid，从而能够使用云开发能力，参照[官方指引](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E5%B8%90%E5%8F%B7)即可
+
 2. 下载[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
-3. 导入项目，选择该文件夹，填上自己的小程序Appid（怎么获取自行搜索）,选择小程序·云开发并打开
+
+3. 导入项目，选择该文件夹，填上自己的小程序Appid（第一步的指引中有）,选择小程序·云开发并打开
+
+   <img src="images/first_page.png" width="70%">
+
+   <img src="images/create_project.png" width="70%">
+
+   
 
 #### 3.创建云环境并配置
 1. 创建请参照[官方指引](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/quick-start/miniprogram.html)
+
 2. 云开发控制台中，在“数据库”界面下创建3个集合：blog、blog-comment、user
+	
+	<img src="images/open_db.png" width="30%">
+	
 	同时将三个集合的数据权限改为：“所有用户可读，仅创建者可读写”
+	
 3. 云开发控制台中，在“存储”界面下创建两个文件夹：blog-image、blog-video
 
+   <img src="images/create_collection.png" width="70%">
+
 #### 4.部署云函数
-1. 回到开发者工具主界面，在资源管理器中找到cloudfunctions文件夹，右键，选择环境为刚刚配置好的（一般会自动配置）
+1. 回到开发者工具主界面，在资源管理器中找到cloudfunctions文件夹，右键，选择环境为刚刚配置好的（一般会自动配置，从上一步到创建环境到这大概需等待 20-30min，可以尝试重启微信开发者工具）的环境
 
-2. 将该文件夹下的musicapi文件夹（云函数），右键->选择"上传并部署：所有文件"，
+   <img src="images/config_env.png" width="70%">
 
-   其他云函数选择“上传并部署：云端安装依赖（不上传node_modules）
+2. 将该文件夹下的所有文件夹（即云函数），右键->选择“上传并部署：云端安装依赖（不上传node_modules）“
+
+   <img src="images/upload_cloudfunctions.png" width="70%">
+
+   上传需要一定时间（特别是musicapi文件夹），可以通过微信开发这工具有下角的小圆圈查看上传进度，注意如果有网路问题导致上传部署失败，则对应的云函数再右键再上传一次
 
 #### 5.点击编译，即可使用辽
 
+​	可以点击真机调试进行测试，想要更实际的体验（真机测试由于数据需要不断传到PC端会较卡）的话可以上传测试版
 
 
+
+### 有什么问题也欢迎提出鸭~
 
