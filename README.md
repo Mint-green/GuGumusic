@@ -5,6 +5,8 @@ A miniprogram for music and blog.
 
 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
+
+
 ### 小程序原型
 
 [wxmusic](https://github.com/zyb718116577/wxmusic)
@@ -18,6 +20,8 @@ A miniprogram for music and blog.
 原项目用的是另一家的API，是直接在小程序端发起数据请求的，而在小程序端直接发起请求一方面会占用较多资源，另一方面小程序端发起的请求都是需要认证的（如果想要上线的话，仅仅开发版玩玩就没关系），使用的时候接口也出现了问题，故决定换成现在用的API，然后因为两个API提供的内容具有较大差别，故我对原有的内容展示也进行了大调整，基本上所有的页面都重写了，也增加了不少自己的想法上去，~~其实就是仿大厂UI，毕竟人家的真的好看~~。
 
 另外，由于微信小程序提供的播放监听接口调用出现了问题，估计是因为我要用太多接口了，根源都是基础的接口调用基础接口太过频繁导致出大问题，就自己写了一套函数进行音乐播放状态的监听，实现仅调用一次基础监听接口就可以在音乐停止时自动切歌，外部（指从手机通知栏等处）暂停后调整小程序内相关变量及状态，比较辣鸡但也可以用了。
+
+
 
 
 
@@ -36,6 +40,8 @@ A miniprogram for music and blog.
 
 
 
+
+
 ### 待实现的功能
 
 * 点赞系统
@@ -47,11 +53,15 @@ A miniprogram for music and blog.
 
 
 
+
+
 ### 使用实例
 
 <img src="images/e.g.1.jpg" width="24%" alt="首页">  <img src="images/e.g.2.jpg" width="24%" alt="歌单页">  <img src="images/e.g.3.jpg" width="24%" alt="按曲名搜索">  <img src="images/e.g.4.jpg" width="24%" alt="按歌手搜索">
 
 <img src="images/e.g.5.jpg" width="24%" alt="按专辑搜索">  <img src="images/e.g.6.jpg" width="24%" alt="播放页">  <img src="images/e.g.7.jpg" width="24%" alt="显示歌词">  <img src="images/e.g.8.jpg" width="24%" alt="博客页">
+
+
 
 
 
@@ -97,6 +107,8 @@ A miniprogram for music and blog.
 #### 5.点击编译，即可使用辽
 
 ​	可以点击真机调试进行测试，想要更实际的体验（真机测试由于数据需要不断传到PC端会较卡）的话可以上传测试版
+
+
 
 
 
