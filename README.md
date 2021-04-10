@@ -49,8 +49,9 @@ A miniprogram for music and blog.
 
 ### 使用实例
 
-<img src="images/e.g.1.jpg" width="24%" alt="首页"> <img src="images/e.g.2.jpg" width="24%" alt="歌单页"><img src="images/e.g.3.jpg" width="24%" alt="按曲名搜索"><img src="images/e.g.4.jpg" width="24%" alt="按歌手搜索">
-<img src="images/e.g.5.jpg" width="24%" alt="按专辑搜索"> <img src="images/e.g.6.jpg" width="24%" alt="播放页"><img src="images/e.g.7.jpg" width="24%" alt="显示歌词"><img src="images/e.g.8.jpg" width="24%" alt="博客页">
+<img src="images/e.g.1.jpg" width="24%" alt="首页">  <img src="images/e.g.2.jpg" width="24%" alt="歌单页">  <img src="images/e.g.3.jpg" width="24%" alt="按曲名搜索">  <img src="images/e.g.4.jpg" width="24%" alt="按歌手搜索">
+
+<img src="images/e.g.5.jpg" width="24%" alt="按专辑搜索">  <img src="images/e.g.6.jpg" width="24%" alt="播放页">  <img src="images/e.g.7.jpg" width="24%" alt="显示歌词">  <img src="images/e.g.8.jpg" width="24%" alt="博客页">
 
 
 
