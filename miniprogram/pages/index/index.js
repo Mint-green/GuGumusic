@@ -11,7 +11,7 @@ Page({
     ispersonalizelistfold: false,
     personalizelist: [],
     lovelist: null,
-    isAuthorize: false,
+    islogin: false,
     topList: [],
   },
 
@@ -30,28 +30,28 @@ Page({
   // },
 
   onShow: function () {
-    this.getAuthorizeStatus()
+    this.getLoginStatus()
   },
 
-  getAuthorizeStatus: function () {
+  getLoginStatus: function () {
     const _this = this
-    let isAuthorize = app.globalData.isAuthorize
-    if (isAuthorize) {
+    let islogin = app.globalData.islogin
+    if (islogin) {
       _this.setData({
-        isAuthorize
+        islogin
       })
       _this.getlovelist()
     } else {
       let temp = null
       // let count = 0
-      Object.defineProperty(app.globalData, 'isAuthorize', {
+      Object.defineProperty(app.globalData, 'islogin', {
         get: function () {
           return temp
         },
         set: function (e) {
-          // console.log("isAuthorize:", e)
+          // console.log("islogin:", e)
           _this.setData({
-            isAuthorize: e
+            islogin: e
           })
           if (e == true) {
             _this.getlovelist()
@@ -186,7 +186,7 @@ Page({
   },
 
   tolovelist: function () {
-    if (app.globalData.isAuthorize != true) {
+    if (app.globalData.islogin != true) {
       wx.showToast({
         title: '登录才能听自己的歌单噢~',
         icon: 'none'

@@ -7,11 +7,13 @@ cloud.init()
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   let data = event.data
+  let openid = wxContext.OPENID
+  data.openid = openid
 
   return new Promise((resolve, reject) => {
     cloud.database().collection("user")
       .where({
-        openid: data.openid
+        openid: openid
       })
       .get()
       .then(res => {
@@ -22,7 +24,7 @@ exports.main = async (event, context) => {
           data.follower = []
           data.following = []
           data.bloglist = []
-          data.blogcommentlist= []
+          data.blogcommentlist = []
           cloud.database().collection("user")
             .add({
               data
@@ -39,7 +41,7 @@ exports.main = async (event, context) => {
           let data1 = data
           cloud.database().collection("user")
             .where({
-              openid: data.openid
+              openid: openid
             })
             .update({
               data
@@ -51,6 +53,7 @@ exports.main = async (event, context) => {
               data1.following = res.data[0].following
               data1.bloglist = res.data[0].bloglist
               data1.blogcommentlist = res.data[0].blogcommentlist
+              data1.lastlogin = res.data[0].lastlogin
               console.log(data1)
               resolve(data1)
             })

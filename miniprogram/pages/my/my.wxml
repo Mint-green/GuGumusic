@@ -1,8 +1,9 @@
 <view>
   <view class="header">
     <image src="./bg.png" class="bg-image" />
-    <button class="loginbtn" open-type="getUserInfo" bindgetuserinfo="getInfo" wx:if="{{!isAuthorize}}">登录</button>
-    <view class="userinfo-wrapper" wx:if="{{isAuthorize}}">
+    <!-- <button class="loginbtn" open-type="getUserInfo" bindgetuserinfo="getInfo" wx:if="{{!islogin}}">登录</button> -->
+    <button class="loginbtn" bindtap="getProfile" wx:if="{{!islogin}}">登录</button>
+    <view class="userinfo-wrapper" wx:if="{{islogin}}">
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <view class="userinfo-nickname">{{userInfo.nickName}}</view>
     </view>

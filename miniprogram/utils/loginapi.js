@@ -72,16 +72,17 @@ const login1 = (data) => {
     })
 }
 
-const login=(data)=>{
-    let time=new Date()
-    data.lastlogin={
-        date:time.getTime(),
+const login = (data) => {
+    let time = new Date()
+    console.log(data)
+    data.lastlogin = {
+        date: time.getTime(),
         localeString: time.toLocaleString()
     }
     return new Promise((resolve, reject) => {
         wx.cloud.callFunction({
             name: "login_register",
-            data:{
+            data: {
                 data
             },
             success: function (res) {

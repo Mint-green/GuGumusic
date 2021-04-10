@@ -10,16 +10,23 @@ Page({
   data: {
     actionSheetsTime: ['关闭', '10分钟', '20分钟', '30分钟'], // 定时关闭选项
     actionSheetsWifi: ['开启', '关闭'],
-    isAuthorize: false,
+    islogin: false,
     userInfo: {}
   },
 
   onLoad: function () {
-    this.getAuthorizeStatus()
+    let islogin = app.globalData.islogin
+    if (islogin) {
+      let userInfo = app.globalData.userInfo
+      this.setData({
+        userInfo
+      })
+    }
+    this.setData({ islogin })
   },
 
-  goMyBlog: function(){
-    if(!this.data.isAuthorize){
+  goMyBlog: function () {
+    if (!this.data.islogin) {
       wx.showToast({
         title: '登录了才能查看噢~',
         icon: 'none',
@@ -54,9 +61,71 @@ Page({
     })
   },
 
-  getInfo: async function (e) {
+  getProfile: function () {
+    let _this = this
+    wx.getUserProfile({
+      desc: '用于完善用户信息',
+      success: (res) => {
+        console.log(res)
+        let userInfo = res.userInfo
+        app.globalData.userInfo = userInfo
+        let userInfoCache = userInfo
+        userInfoCache.lastAuthorize = new Date().getTime()
+        wx.setStorageSync('userInfoCache', userInfoCache)
+        _this.setData({
+          userInfo
+        })
+        _this.getUserInfo(userInfo)
+
+      },
+      fail: (err) => {
+        console.log(err)
+      },
+    })
+  },
+
+  getUserInfo: async function (userInfo) {
+    let loginres = await loginapi.login(userInfo)
+    console.log(loginres)
+    this.setData({
+      userInfo: loginres.result,
+      islogin: true,
+    })
+    app.globalData.userInfo = loginres.result
+    app.globalData.islogin = true
+  },
+
+  showActionSheets: function (e) {
+    console.log(e.currentTarget)
+    const itemList = e.currentTarget.dataset.type
+    const type = e.currentTarget.dataset.types
+    const _this = this
+    wx.showActionSheet({
+      itemList: itemList,
+      success: function (res) {
+        if (type == 'time') {
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 0
+            })
+          }, 5000)
+        } else {
+          _this.setData({
+            test: !_this.data.test
+          })
+          console.log(_this.data.test)
+        }
+
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
+
+  getInfo1: async function (e) {  //由于微信更改了wx.getUserInfo()接口权限，该函数废弃
     // console.log(e)
-    // console.log(e.detail.userInfo)
+    console.log(e.detail.userInfo)
     if (e.detail.userInfo) {
       let openid = await getopenid()
       // console.log(openid)
@@ -80,10 +149,9 @@ Page({
         isAuthorize: false
       })
     }
-    // this.getAuthSetting()
   },
 
-  getAuthorizeStatus: function () {
+  getAuthorizeStatus1: function () {  //由于微信更改了wx.getUserInfo()接口权限，该函数废弃
     const _this = this
     let isAuthorize = app.globalData.isAuthorize
     // console.log(isAuthorize)
@@ -115,7 +183,7 @@ Page({
 
   },
 
-  getUserInfo: function () {
+  getUserInfo1: function () {  //由于微信更改了wx.getUserInfo()接口权限，该函数废弃
     const _this = this
     console.log(app.globalData.userInfo)
     if (app.globalData.userInfo.lovelist) {
@@ -142,65 +210,4 @@ Page({
       })
     }
   },
-
-  getAuthSetting: async function () {
-    let isAuthorize = app.globalData.isAuthorize
-    console.log(isAuthorize)
-    this.setData({
-      isAuthorize
-    })
-    if (isAuthorize) {
-      let userInfo = app.globalData.userInfo
-      this.setData({
-        userInfo
-      })
-    }
-  },
-
-  // 拒绝授权
-  toAauthorize: function () {
-    wx.showModal({
-      title: '警告',
-      content: '用户拒绝了授权，可能会导致某些功能无法正常使用!是否重新授权？',
-      confirmText: '是',
-      showCancel: false,
-      success: function (res) {
-        if (res.confirm) {
-          wx.openSetting({
-            success: (res) => {
-              console.log(res);
-            }
-          });
-        }
-      }
-    })
-  },
-
-  showActionSheets: function (e) {
-    console.log(e.currentTarget)
-    const itemList = e.currentTarget.dataset.type
-    const type = e.currentTarget.dataset.types
-    const _this = this
-    wx.showActionSheet({
-      itemList: itemList,
-      success: function (res) {
-        if (type == 'time') {
-          setTimeout(() => {
-            wx.navigateBack({
-              delta: 0
-            })
-          }, 5000)
-        } else {
-          _this.setData({
-            test: !_this.data.test
-          })
-          console.log(_this.data.test)
-        }
-
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
-    })
-  }
 })

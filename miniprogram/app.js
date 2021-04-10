@@ -26,13 +26,13 @@ App({
       //alert(res.isConnected)
       console.log(res.networkType)
     })
-  },
-  onShow: async function () {
+    this.login()
     //检测用户是否微信版本是否支持自定义组件
     this.checkVersion()
-    // this.getOpenid()
-    // await this.getAuthSetting()
-    this.login()
+  },
+
+  onShow: async function () {
+    
   },
 
   checkVersion: function () {
@@ -64,10 +64,8 @@ App({
     playing: false,
     innerAudioContext: null,
     openid: '', //  用户的openid （用户使用同一个小程序openid不变）
-    musicOpenid: '', // 用户喜欢歌曲列表openid
-    blogOpenid: '', // 用户喜欢的博客列表openid
     isBtnType: 0,
-    isAuthorize: false, //是否授权获取用户信息
+    islogin: false, //是否授权获取用户信息
     currentSong: {}, //当前播放的歌曲信息
     playMod: 1, //播放模式
     priorityQueue: [], //优先队列
@@ -76,7 +74,65 @@ App({
     isPlayingLovelist: true, //是否在播放我喜欢歌单(默认为是)
   },
 
-  getAuthSetting: async function () {
+  login: async function () {
+    //*** 旧版login
+    // let settingres = await this.getAuthSetting()
+    // if (!settingres) { 
+    //   this.initplayinfo(false)
+    //   return
+    //  }
+    // let userInfo = this.globalData.userInfo
+    // let res = await loginapi.login(userInfo)
+    // this.globalData.userInfo = res.result
+    // this.initplayinfo(true)
+
+    // 新版login
+    let userInfoCache = wx.getStorageSync('userInfoCache')
+    if (userInfoCache) {
+      // console.log(userInfoCache)
+      let now = new Date().getTime()
+      if (now - userInfoCache.lastAuthorize > 172800000) { //设置授权有效期为两天，主要原因在于用户可能会换头像和昵称，需要更新这些信息
+        this.initplayinfo(false)
+        wx.removeStorageSync('userInfoCache')
+      } else {
+        let res = await loginapi.login(userInfoCache)
+        this.globalData.userInfo = res.result
+        this.globalData.islogin = true
+        this.initplayinfo(true)
+      }
+    }
+    this.initplayinfo(false)
+  },
+
+  // 初始化播放状态
+  initplayinfo: function (islogin) {
+    let playHistory = wx.getStorageSync('playHistory')
+    let playMod = wx.getStorageSync('playMod')
+    let songlist = wx.getStorageSync('songlist')
+    if (!playHistory || playHistory.toString() == "") { playHistory = [] }
+    if (!playMod || playMod == "") { playMod = 1 }
+    if (!songlist || songlist.toString() == "") {
+      if (islogin) {
+        songlist = this.globalData.userInfo.lovelist
+      } else {
+        songlist = []
+      }
+    }
+    this.globalData.playHistory = playHistory
+    this.globalData.playMod = playMod
+    this.globalData.songlist = songlist
+  },
+
+  // 获取和设置发布或者展示的资源类型（图片和视频）
+  getResourceType: function () {
+    return this.globalData.isBtnType
+  },
+
+  setResourceType(sign) {
+    this.globalData.isBtnType = sign
+  },
+
+  getAuthSetting: async function () {  //由于wx.getUserInfo()接口权限调整，该函数废弃
     const _this = this
     let res = await getSetting()
     if (res.authSetting["scope.userInfo"]) {
@@ -101,80 +157,20 @@ App({
     }
   },
 
-  login: async function () {
-    let settingres = await this.getAuthSetting()
-    if (!settingres) { 
-      this.initplayinfo(false)
-      return
-     }
-    let userInfo = this.globalData.userInfo
-    // console.log(userInfo)
-    let res = await loginapi.login(userInfo)
-    // console.log(res)
-    this.globalData.userInfo = res.result
-    // console.log(new Date().toLocaleString())
-    // console.log(res.result.lastlogin)
-    this.initplayinfo(true)
-  },
-
-  initplayinfo: function (islogin) {
-    let playHistory = wx.getStorageSync('playHistory')
-    let playMod = wx.getStorageSync('playMod')
-    let songlist = wx.getStorageSync('songlist')
-    if (!playHistory || playHistory.toString() == "") { playHistory = [] }
-    if (!playMod || playMod == "") { playMod = 1 }
-    if (!songlist || songlist.toString() == "") {
-      if(islogin){
-        songlist=this.globalData.userInfo.lovelist
-      }else{
-        songlist = []
-      }
-    }
-    this.globalData.playHistory = playHistory
-    this.globalData.playMod = playMod
-    this.globalData.songlist = songlist
-  },
-
-  // 获取和设置发布或者展示的资源类型（图片和视频）
-  getResourceType: function () {
-    return this.globalData.isBtnType
-  },
-
-  setResourceType(sign) {
-    this.globalData.isBtnType = sign
-  },
-
   // 获取用户的openid并储存在storage中
   getOpenid: function () {
     wx.cloud.callFunction({
       name: "login"
     }).then((res) => {
       // console.log(res);
-
       let openid = res.result.openid
-      let musicOpenid = openid + "loveList"
-      let blogOpenid = openid + "blogList"
-
       this.globalData.openid = openid
-      this.globalData.musicOpenid = musicOpenid
-      this.globalData.blogOpenid = blogOpenid
 
       // 将openid存储到storage中（用户最近播放列表）
       if (wx.getStorageSync(openid) == '') {
         wx.setStorageSync(openid, [])
       }
-
-      // 用户我的喜爱歌曲列表
-      if (wx.getStorageSync(musicOpenid) == '') {
-        wx.setStorageSync(musicOpenid, [])
-      }
-
-      // 用户我的喜欢博客列表
-      if (wx.getStorageSync(blogOpenid) == '') {
-        wx.setStorageSync(blogOpenid, [])
-      }
       return openid
-
     })
   },
 })

@@ -12,8 +12,8 @@
 			</view>
 			<view class="playlist-text">
 				<view class="playlist-name">我喜欢</view>
-				<view class="playlist-length" hidden="{{!isAuthorize}}">{{lovelist.length}} 首</view>
-				<view class="playlist-length" hidden="{{isAuthorize}}">请先登录再查看歌单噢~</view>
+				<view class="playlist-length" hidden="{{!islogin}}">{{lovelist.length}} 首</view>
+				<view class="playlist-length" hidden="{{islogin}}">请先登录再查看歌单噢~</view>
 			</view>
 		</view>
 	</view>
