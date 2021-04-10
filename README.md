@@ -66,9 +66,9 @@ A miniprogram for music and blog.
 
 3. 导入项目，选择该文件夹，填上自己的小程序Appid（第一步的指引中有）,选择小程序·云开发并打开
 
-   <img src="images/first_page.png" width="70%">
+   <img src="images/first_page.png" width="60%" align="middle">
 
-   <img src="images/create_project.png" width="70%">
+   <img src="images/create_project.png" width="60%" align="middle">
 
    
 
@@ -76,23 +76,22 @@ A miniprogram for music and blog.
 1. 创建请参照[官方指引](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/quick-start/miniprogram.html)
 
 2. 云开发控制台中，在“数据库”界面下创建3个集合：blog、blog-comment、user
-	
-	<img src="images/open_db.png" width="30%">
+	<img src="images/open_db.png" width="20%" align="middle">
 	
 	同时将三个集合的数据权限改为：“所有用户可读，仅创建者可读写”
 	
 3. 云开发控制台中，在“存储”界面下创建两个文件夹：blog-image、blog-video
 
-   <img src="images/create_collection.png" width="70%">
+	<img src="images/create_collection.png" width="60%" align="middle">
 
 #### 4.部署云函数
 1. 回到开发者工具主界面，在资源管理器中找到cloudfunctions文件夹，右键，选择环境为刚刚配置好的（一般会自动配置，从上一步到创建环境到这大概需等待 20-30min，可以尝试重启微信开发者工具）的环境
 
-   <img src="images/config_env.png" width="70%">
+   <img src="images/config_env.png" width="60%" align="middle">
 
 2. 将该文件夹下的所有文件夹（即云函数），右键->选择“上传并部署：云端安装依赖（不上传node_modules）“
 
-   <img src="images/upload_cloudfunctions.png" width="70%">
+   <img src="images/upload_cloudfunctions.png" width="60%" align="middle">
 
    上传需要一定时间（特别是musicapi文件夹），可以通过微信开发这工具有下角的小圆圈查看上传进度，注意如果有网路问题导致上传部署失败，则对应的云函数再右键再上传一次
 
