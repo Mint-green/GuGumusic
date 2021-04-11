@@ -23,12 +23,11 @@ A miniprogram for music and blog.
 
 
 
-
+​      
 
 ### 已实现的功能
 
 * 搜索歌曲、专辑、艺人
-
 * 查看热门歌单
 * 查看歌手排名
 * 创建自己的歌单（目前仅有“我喜欢”歌单）
@@ -40,7 +39,7 @@ A miniprogram for music and blog.
 
 
 
-
+​      
 
 ### 待实现的功能
 
@@ -53,7 +52,7 @@ A miniprogram for music and blog.
 
 
 
-
+​       
 
 ### 使用实例
 
@@ -63,7 +62,7 @@ A miniprogram for music and blog.
 
 
 
-
+​         
 
 ### 使用方法
 
@@ -110,7 +109,7 @@ A miniprogram for music and blog.
 
 
 
-
+   
 
 ### 有什么问题也欢迎提出鸭~
 
